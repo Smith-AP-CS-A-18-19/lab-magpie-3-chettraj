@@ -30,8 +30,7 @@ public class Magpie3 {
 		if (statement.length() == 0)
 		{
 			response = "Say something, please.";
-		}
-		else if (findKeyword(statement, "no") >= 0) {
+		} else if (findKeyword(statement, "no") >= 0) {
 			response = "Why so negative?";
 		} else if (findKeyword(statement, "mother") >= 0
 				   || findKeyword(statement, "father") >= 0
@@ -39,12 +38,20 @@ public class Magpie3 {
 				   || findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}  else if (findKeyword(statement, "cat") >=0
+					 || findKeyword(statement, "dog") >= 0
+					 || findKeyword(statement, "bearded dragon") >= 0
+					 || findKeyword(statement, "bunny") >= 0)
+		{
+			response = "Tell me more about your pets";
+		} else if (findKeyword(statement, "Mr. Smith") >= 0)
+		{
+			response = "What a genius!";
 		} else {
 			response = getRandomResponse();
 		}
 		return response;
 	}
-
 	/**
 	 * Search for one word in phrase. The search is not case
 	 * sensitive. This method will check that the given goal
